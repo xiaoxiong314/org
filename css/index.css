@@ -1,0 +1,85 @@
+input {
+    margin: 10px 0px;
+}
+
+label {
+    align-content: center;
+}
+
+#orgDiv {
+    background-color: white;
+    padding: 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#topbar {
+    background: #fff;
+}
+
+.action-button {
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #d3d3d3;
+    color: #6e6e6e;
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.action-button:hover,
+.action-button:focus {
+    background: #0079c1;
+    color: #e4e4e4;
+}
+
+.active {
+    background: #0079c1;
+    color: #e4e4e4;
+}
+
+#sltLine {
+    width: calc(100% - 36px);
+    display: inline;
+    vertical-align: middle;
+}
+
+.esri-navigation-toggle {
+    display: none;
+}
+
+.genBtn {
+    width: 32%;
+    display: inline;
+    align-content: right;
+}
+
+.numInput {
+    width: 27%;
+    margin: 10px 0px 0px 0px;
+}
+
+.para {
+    display: inline-block;
+}
+
+.para-name {
+    width: 22%;
+}
+
+.para-unit {
+    width: 15%;
+}
+
+input[type=checkbox] {
+    background: #0079c1;
+    border-color: #0079c1;
+    width: 20px;
+    cursor: pointer;
+    margin: 0px;
+    display: inline;
+    align-content: right;
+}

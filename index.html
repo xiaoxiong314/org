@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线切ORG</title>
+</head>
+<link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css" />
+<link rel="stylesheet" href="/css/index.css" />
+<style>
+    html,
+    body,
+    #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    }
+</style>
+
+<script src="https://js.arcgis.com/4.23/"></script>
+<!-- <script src="https://js.arcgis.com/4.23/" data-esri-loader="loaded"></script> -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/togeojson.js"></script>
+<script src="js/initUI.js"></script>
+
+<script src="index.js" type="module">
+
+</script>
+</head>
+
+<body>
+    <div id="viewDiv"></div>
+    <div id="orgDiv" class="esri-widget">
+        <!-- <div id="orgDiv" class="esri-widget"> -->
+        <label style="width: 100%;font-size: large;font-weight: bold;">选择Kml路径</label>
+        <br />
+        <input id="kml-file" type="file" class="esri-input" accept=".kml">
+        <br />
+        <select id="sltLine" class="esri-input esri-select" type="select">
+        </select>
+        <button class="action-button esri-icon-zoom-to-object" id="btnLocate" type="button" title="定位到对象"
+            style="vertical-align:middle;"> </button>
+        <br />
+        <label class="para para-name">边线偏距</label>
+        <input id="offset" type="number" class="esri-input esri-number numInput" min="5" max="100" value="15">
+        <label class="para para-unit">m</label>
+        <input class="checkbox" id="chkOffset" type="checkbox"><label for="chkOffset">生成边线</label></input>
+
+        <br />
+        <label class="para para-name">采样精度</label>
+        <input id="sample" type="number" class="esri-input esri-number numInput" min="5" max="100" value="20">
+        <label class="para para-unit">m</label>
+        <button class="esri-button genBtn" id="btnGenORG" type="button">
+            生成ORG
+        </button>
+        <br />
+        <label class="para para-name">缓冲区宽</label>
+        <input id="bufferWidth" type="number" class="esri-input esri-number numInput" min="0" max="9999" value="2">
+        <label class="para para-unit">m</label>
+        <button class="esri-button genBtn" id="btnGenBuffer" type="button">
+            生成缓冲区
+        </button>
+    </div>
+    <div id="topView" class="esri-component esri-compass esri-widget--button esri-widget esri-interactive" role="button"
+        tabindex="1" aria-label="俯视" title="俯视">
+        <span aria-hidden="true" class="esri-icon-default-action"></span>
+    </div>
+    <div id="topbar">
+        <button class="action-button esri-icon-measure-line" id="distanceButton" type="button" title="测量两点间距离"></button>
+        <br />
+        <button class="action-button esri-icon-measure-area" id="areaButton" type="button" title="测量面积"></button>
+    </div>
+</body>
+
+</html>
